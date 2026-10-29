@@ -14,10 +14,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Install CMake 3.31.6
-        run: |
-          sdkmanager --install "cmake;3.31.6"
-          cmake --version
+        run: sdkmanager "cmake;3.31.6"
 
       - name: Build APK
         run: |
